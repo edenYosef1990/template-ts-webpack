@@ -10,7 +10,7 @@ export class Player extends Actor {
       width: 25,
       height: 25,
       color: new Color(255, 255, 255),
-      collisionType: ex.CollisionType.Active
+      collisionType: ex.CollisionType.Passive
     });
   }
 

@@ -11,16 +11,20 @@ export class DebugObject extends Actor {
         width: 25,
         height: 200,
         color: new Color(221, 160, 221),
-        collisionType: ex.CollisionType.Fixed
+        collisionType: ex.CollisionType.Passive
       });
+
+      this.on('collisionstart' , () => {console.log("hello123!")});
     }
 
     onPreUpdate(engine: ex.Engine, delta: number) {
         this.rotation = (this.currentAngle) * (Math.PI * 2 / 360);
         this.currentAngle = (this.currentAngle + 0.3) % 360;
+        this.vel.x = 0;
+        this.vel.y = 0;
     }
 
     onPostCollision(evt: ex.PostCollisionEvent) {
-        console.log("collision!");
+        console.log("collision!123");
     }
 }

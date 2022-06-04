@@ -29,6 +29,7 @@ class Game extends Engine {
     this.levelOne = new LevelOne();
     this.player = new Player();
     this.enemy = new Enemy();
+
     this.levelOne.add(this.player);
     this.levelOne.add(this.enemy);
     this.levelOne.add(this.debugUbject);
@@ -44,7 +45,7 @@ class Game extends Engine {
   }
 }
 
-Physics.useRealisticPhysics();
+Physics.useArcadePhysics();
 const game = new Game();
 game.start().then(() => {
   game.goToScene('levelOne');
